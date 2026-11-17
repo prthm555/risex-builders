@@ -6,34 +6,31 @@
   <title>RISEx Builders</title>
   <meta name="description" content="Apps and products built on RISEx." />
   <!-- Set the theme before first paint so there's no flash of the wrong theme.
-       Saved choice wins; otherwise follow the system; dark is the fallback. -->
+       Dark is the default; a visitor's saved choice from the toggle wins. -->
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "dark") {
-        t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-      }
-      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="wrap topbar">
     <div class="brand"><span class="brand-mark"></span>RISEx Builders</div>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
   </div>
 
   <header class="hero">
     <div class="wrap">
-      <p class="pill"><span class="pill-dot"></span>Ecosystem directory</p>
+      <p class="pill"><span class="pill-dot"></span><span id="pill-text">Ecosystem directory</span></p>
       <h1>Built on <span class="grad">RISEx</span></h1>
       <p class="lede">Apps, terminals and tools that integrate RISEx or trade through builder codes.</p>
     </div>
@@ -42,19 +39,29 @@
   <main class="wrap">
     <div class="toolbar">
       <div class="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="search" type="search" placeholder="Search builders…" aria-label="Search builders" />
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search builders…" aria-label="Search builders" autocomplete="off" />
+        <kbd class="kbd" aria-hidden="true">/</kbd>
       </div>
-      <div id="filters" class="filters" role="group" aria-label="Filter by platform"></div>
+      <div class="filter-row">
+        <div id="filters" class="filters" role="group" aria-label="Filter by platform"></div>
+        <p class="count"><span id="count" aria-live="polite"></span><button id="clear" class="clear" type="button" hidden>Clear</button></p>
+      </div>
     </div>
 
-    <p id="count" class="count"></p>
     <ul id="list" class="list"></ul>
-    <p id="empty" class="empty" hidden>No builders match your search.</p>
+    <div id="empty" class="empty" hidden>
+      <p class="empty-title">No builders found</p>
+      <p>Try a different search or platform.</p>
+      <button id="empty-clear" class="btn" type="button">Clear search</button>
+    </div>
   </main>
 
   <footer class="wrap footer">
-    <strong>Building on RISEx?</strong> Get listed — reach out to the team.
+    <strong>Building on RISEx?</strong> Get listed — reach out to
+    <a href="https://x.com/drdent18" target="_blank" rel="noopener noreferrer">@drdent18 on X</a>
+    or
+    <a href="https://t.me/drdent18" target="_blank" rel="noopener noreferrer">Telegram</a>.
   </footer>
 
   <!-- Data first, then the renderer. Edit builders.js to change the list. -->
