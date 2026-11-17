@@ -40,9 +40,18 @@ window.BUILDERS = [
     tagline: "Trade crypto, US stocks, gold and forex from one account.",
   },
   {
-    name: "Cede",
-    website: "https://cede.store",
+    name: "Aspen",
+    website: "https://rise.tryaspen.ai/feed",
     platforms: ["Web"],
+    x: "@tryaspenai",
+    tagline: "Follow or counter trading signals that auto-execute as orders.",
+  },
+  {
+    name: "Cede Flow",
+    website: "https://www.cedeflow.io",
+    platforms: ["Web"],
+    x: "@cedeflow",
+    tagline: "Market-making and delta-neutral strategies for perp DEXs.",
   },
   {
     name: "ClashBot",
@@ -50,13 +59,6 @@ window.BUILDERS = [
     platforms: ["Web"],
     x: "@clashbotdotfun",
     tagline: "Copy traders, run bots and automate perp strategies.",
-  },
-  {
-    name: "CodeCraft",
-    website: "https://codecraft.io",
-    platforms: ["Web"],
-    x: "@CodecraftGroup",
-    tagline: "Web3 growth ecosystem for founders.",
   },
   {
     name: "DeltaPulse",
@@ -106,6 +108,13 @@ window.BUILDERS = [
     tagline: "Stablecoin yield and AI trading vaults.",
   },
   {
+    name: "Split Markets",
+    website: "https://split.markets",
+    platforms: ["Web"],
+    x: "@splitmarkets",
+    tagline: "Up or down every 15 minutes: options and perps in one wallet.",
+  },
+  {
     name: "Vesper",
     website: "https://sypherscore.com",
     platforms: ["Web"],
@@ -121,12 +130,6 @@ window.BUILDERS = [
   },
 
   // ── Hidden until confirmed — remove the // to show ──
-  // splitmoney.in is an expense-splitting app (no trading); likely the wrong site.
-  // {
-  //   name: "Split Money",
-  //   website: "https://splitmoney.in",
-  //   platforms: ["Web"],
-  // },
   // No website or X account found yet.
   // {
   //   name: "Shift",
