@@ -87,6 +87,13 @@ window.BUILDERS = [
     tagline: "Funding-rate arbitrage screener across 55 perp exchanges.",
   },
   {
+    name: "PerpDexList",
+    website: "https://perpdexlist.com",
+    platforms: ["Web", "Telegram"],
+    x: "@cryppimagic",
+    tagline: "Funding rates, liquidity and execution costs across 47 perp venues.",
+  },
+  {
     name: "PerpsMania",
     website: "https://perpsmania.com",
     platforms: ["Web"],
