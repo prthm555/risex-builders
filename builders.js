@@ -108,6 +108,19 @@ window.BUILDERS = [
     tagline: "All-in-one trading terminal for RISEx and other major venues.",
   },
   {
+    name: "ptsGoblin",
+    website: "https://ptsgoblin.xyz",
+    platforms: ["Web"],
+    x: "@PointsGoblin",
+    tagline: "Points and airdrop calculators: see your real cost per point.",
+  },
+  {
+    name: "RiseScreener",
+    website: "https://risescreener.com",
+    platforms: ["Web"],
+    tagline: "RISEx analytics: markets, OI, funding, liquidations and flows.",
+  },
+  {
     name: "Scrub Money",
     website: "https://invest.scrub.money",
     platforms: ["Web"],
